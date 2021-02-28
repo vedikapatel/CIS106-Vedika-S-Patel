@@ -1,0 +1,10 @@
+Function Main
+    Declare Real gallons
+    Declare Real miles
+    Declare Real MPG
+    
+    Input gallons
+    Input miles
+    Assign MPG = miles/gallons
+    Output MPG
+End
