@@ -1,3 +1,0 @@
-meal = int(input())
-tip = float(15) / meal * 100
-print("Tip is $" + str(tip))
