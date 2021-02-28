@@ -1,0 +1,12 @@
+Function Main
+    Declare String LastName
+    Declare Integer exam1
+    Declare Integer exam2
+    Declare Integer ave
+    
+    Input LastName
+    Input exam1
+    Input exam2
+    Assign ave = (exam1 + exam2)/2
+    Output LastName & "'s average: " & ave
+End
