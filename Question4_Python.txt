@@ -1,0 +1,3 @@
+meal = float(input())
+tip = float(15) / 100 * meal
+print(tip)

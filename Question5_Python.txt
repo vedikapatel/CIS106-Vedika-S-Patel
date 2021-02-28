@@ -1,0 +1,4 @@
+subtotal = float(input())
+tax = float(7) / 100 * subtotal
+total = subtotal + tax
+print("Item amount $" + str(subtotal) + ", Tax $" + str(tax) + ", Total $" + str(total))
