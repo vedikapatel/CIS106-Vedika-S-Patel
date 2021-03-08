@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-03-08 02:03:44 AM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLUZCSzZHOFU7MjAyMS0wMy0wODswMToxNjoxNSBBTTszMzEx"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLUZCSzZHOFU7MjAyMS0wMy0wODswMjowMzo0NCBBTTs0OzM0MjE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="exam1" type="Integer" array="False" size=""/>
+            <declare name="exam2" type="Integer" array="False" size=""/>
+            <declare name="total" type="Integer" array="False" size=""/>
+            <input variable="exam1"/>
+            <input variable="exam2"/>
+            <assign variable="exam1" expression="exam1*0.6"/>
+            <assign variable="exam2" expression="exam2*0.4"/>
+            <output expression="exam1+exam2" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
