@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-03-15 12:29:51 AM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLVIxSE84MVM7MjAyMS0wMy0xNDsxMTo0NjozNiBQTTszMzIz"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLVIxSE84MVM7MjAyMS0wMy0xNTsxMjoyOTo1MSBBTTsxOzM0MTY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="ln" type="String" array="False" size=""/>
+            <output expression="&quot;Enter your Last Name&quot;" newline="True"/>
+            <input variable="ln"/>
+            <declare name="numdep" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter the number of dependents&quot;" newline="True"/>
+            <input variable="numdep"/>
+            <declare name="grsinc, adjinc, taxrate, inctax" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter your gross income&quot;" newline="True"/>
+            <input variable="grsinc"/>
+            <assign variable="adjinc" expression="grsinc-numdep*12000"/>
+            <if expression="adjinc &gt; 50000">
+                <then>
+                    <assign variable="taxrate" expression="0.20"/>
+                </then>
+                <else>
+                    <assign variable="taxrate" expression="0.10"/>
+                </else>
+            </if>
+            <assign variable="inctax" expression="adjinc*taxrate"/>
+            <if expression="inctax &lt; 0">
+                <then>
+                    <assign variable="inctax" expression="100"/>
+                </then>
+                <else/>
+            </if>
+            <output expression="&quot;Last Name: &quot; &amp; ln &amp; ToChar(13) &amp; &quot;Gross Income: $&quot; &amp; grsinc &amp; ToChar(13) &amp; &quot;Number of dependents: &quot; &amp; numdep &amp; ToChar(13) &amp; &quot;Adjusted gross income: $&quot; &amp; adjinc &amp; ToChar(13) &amp; &quot;Income tax: $&quot; &amp; inctax" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
