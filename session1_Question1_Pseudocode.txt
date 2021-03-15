@@ -4,5 +4,7 @@ Function Main
     
     Input number1
     Input number2
-    Output "Sum = " & number1 + number2 &", Product = " & number1 * number2 &", Difference = " & number1 - number2
+    Output "Sum = " & number1 + number2 &
+", Product = " & number1 * number2 &
+", Difference = " & number1 - number2
 End
