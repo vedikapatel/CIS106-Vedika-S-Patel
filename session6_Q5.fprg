@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-04-11 04:41:04 AM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLThMVk0wVjA7MjAyMS0wNC0xMTswMTozMDozNyBBTTszMzA2"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLThMVk0wVjA7MjAyMS0wNC0xMTswNDo0MTowNCBBTTs5OzM0MjE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastName" type="String" array="False" size=""/>
+            <declare name="creditHours" type="Integer" array="False" size=""/>
+            <declare name="disCode" type="String" array="False" size=""/>
+            <declare name="pch" type="Real" array="False" size=""/>
+            <declare name="tuition" type="Real" array="False" size=""/>
+            <input variable="lastName"/>
+            <input variable="creditHours"/>
+            <input variable="disCode"/>
+            <call expression="comptuition(creditHours, disCode)"/>
+            <assign variable="tuition" expression="comptuition(creditHours,disCode)"/>
+            <output expression="&quot;Last Name: &quot; &amp; lastName" newline="True"/>
+            <output expression="&quot;Tuition owed: $&quot; &amp; tuition" newline="True"/>
+        </body>
+    </function>
+    <function name="comptuition" type="Real" variable="tuition">
+        <parameters>
+            <parameter name="creditHours" type="Integer" array="False"/>
+            <parameter name="disCode" type="String" array="False"/>
+        </parameters>
+        <body>
+            <declare name="tuition" type="Real" array="False" size=""/>
+            <declare name="pch" type="Real" array="False" size=""/>
+            <if expression="disCode == &quot;I&quot;">
+                <then>
+                    <assign variable="pch" expression="250.00"/>
+                </then>
+                <else>
+                    <if expression="disCode ==&quot;O&quot;">
+                        <then>
+                            <assign variable="pch" expression="550.00"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;Invalid Code&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="tuition" expression="creditHours * pch"/>
+        </body>
+    </function>
+</flowgorithm>
