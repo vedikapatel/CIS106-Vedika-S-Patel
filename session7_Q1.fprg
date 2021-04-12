@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-04-12 12:40:02 AM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLThMVk0wVjA7MjAyMS0wNC0xMTswMTozMDozNyBBTTszMzA2"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLThMVk0wVjA7MjAyMS0wNC0xMTswMzowNzowNCBBTTs2OzM0MTk="/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLTdSUTBUTzI7MjAyMS0wNC0xMjsxMjo0MDowMiBBTTsxOzM0MTI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastName" type="String" array="False" size=""/>
+            <declare name="exam1" type="Real" array="False" size=""/>
+            <declare name="exam2" type="Real" array="False" size=""/>
+            <declare name="exam3" type="Real" array="False" size=""/>
+            <declare name="avg" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <input variable="lastName"/>
+            <input variable="exam1"/>
+            <input variable="exam2"/>
+            <input variable="exam3"/>
+            <call expression="compavg(exam1, exam2, exam3)"/>
+            <assign variable="avg" expression="compavg(exam1,exam2,exam3)"/>
+            <call expression="comptotal(exam1, exam2, exam3)"/>
+            <assign variable="total" expression="comptotal(exam1,exam2,exam3)"/>
+            <output expression="&quot;Last name: &quot; &amp; lastName" newline="True"/>
+            <output expression="&quot;Total points: &quot; &amp; total" newline="True"/>
+            <output expression="&quot;Average exam score: &quot; &amp; avg" newline="True"/>
+        </body>
+    </function>
+    <function name="compavg" type="Real" variable="avg">
+        <parameters>
+            <parameter name="exam1" type="Real" array="False"/>
+            <parameter name="exam2" type="Real" array="False"/>
+            <parameter name="exam3" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="avg" type="Real" array="False" size=""/>
+            <assign variable="avg" expression="(exam1 + exam2 + exam3) / 3"/>
+        </body>
+    </function>
+    <function name="comptotal" type="Real" variable="total">
+        <parameters>
+            <parameter name="exam1" type="Real" array="False"/>
+            <parameter name="exam2" type="Real" array="False"/>
+            <parameter name="exam3" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="total" type="Real" array="False" size=""/>
+            <assign variable="total" expression="exam1 + exam2 + exam3"/>
+        </body>
+    </function>
+</flowgorithm>
