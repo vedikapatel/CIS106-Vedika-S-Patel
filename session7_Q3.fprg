@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-04-12 01:29:25 AM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLThMVk0wVjA7MjAyMS0wNC0xMTswMTozMDozNyBBTTszMzA2"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLThMVk0wVjA7MjAyMS0wNC0xMTswMzowNzowNCBBTTs2OzM0MTk="/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLTdSUTBUTzI7MjAyMS0wNC0xMjswMToyOToyNSBBTTs0OzM0MjU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastName" type="String" array="False" size=""/>
+            <declare name="sales" type="Real" array="False" size=""/>
+            <declare name="com" type="Real" array="False" size=""/>
+            <declare name="nextYrTarget" type="Real" array="False" size=""/>
+            <input variable="lastName"/>
+            <input variable="sales"/>
+            <call expression="compcom(sales)"/>
+            <assign variable="com" expression="compcom(sales)"/>
+            <call expression="compnextYrTarget(sales)"/>
+            <assign variable="nextYrTarget" expression="compnextYrTarget(sales)"/>
+            <output expression="&quot;Sales person last name: &quot; &amp; lastName" newline="True"/>
+            <output expression="&quot;Commission: $&quot; &amp; com" newline="True"/>
+            <output expression="&quot;Next year's target: $&quot; &amp; nextYrTarget" newline="True"/>
+        </body>
+    </function>
+    <function name="compcom" type="Real" variable="com">
+        <parameters>
+            <parameter name="sales" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="com" type="Real" array="False" size=""/>
+            <if expression="sales &gt; 100000.00">
+                <then>
+                    <assign variable="com" expression="sales * 0.10"/>
+                </then>
+                <else>
+                    <assign variable="com" expression="sales * 0.05"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="compnextYrTarget" type="Real" variable="nextYrTarget">
+        <parameters>
+            <parameter name="sales" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="nextYrTarget" type="Real" array="False" size=""/>
+            <assign variable="nextYrTarget" expression="(sales * 0.05) + sales"/>
+        </body>
+    </function>
+</flowgorithm>
