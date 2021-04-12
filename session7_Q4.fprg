@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-04-12 01:52:47 AM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLThMVk0wVjA7MjAyMS0wNC0xMTswMTozMDozNyBBTTszMzA2"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLThMVk0wVjA7MjAyMS0wNC0xMTswMzowNzowNCBBTTs2OzM0MTk="/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLTdSUTBUTzI7MjAyMS0wNC0xMjswMTo1Mjo0NyBBTTszOzM0MjQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastName" type="String" array="False" size=""/>
+            <declare name="game1" type="Real" array="False" size=""/>
+            <declare name="game2" type="Real" array="False" size=""/>
+            <declare name="game3" type="Real" array="False" size=""/>
+            <declare name="hanCap" type="Real" array="False" size=""/>
+            <declare name="avg" type="Real" array="False" size=""/>
+            <declare name="avgHanCap" type="Real" array="False" size=""/>
+            <input variable="lastName"/>
+            <input variable="game1"/>
+            <input variable="game2"/>
+            <input variable="game3"/>
+            <input variable="hanCap"/>
+            <call expression="compavg(game1, game2, game3)"/>
+            <assign variable="avg" expression="compavg(game1,game2,game3)"/>
+            <call expression="compavgHanCap(game1, game2, game3, hanCap)"/>
+            <assign variable="avgHanCap" expression="compavgHanCap(game1,game2,game3,hanCap)"/>
+            <output expression="&quot;Bowler last name: &quot; &amp; lastName" newline="True"/>
+            <output expression="&quot;Average score: &quot; &amp; avg" newline="True"/>
+            <output expression="&quot;Average score with handicap: &quot; &amp; avgHanCap" newline="True"/>
+        </body>
+    </function>
+    <function name="compavg" type="Real" variable="avg">
+        <parameters>
+            <parameter name="game1" type="Real" array="False"/>
+            <parameter name="game2" type="Real" array="False"/>
+            <parameter name="game3" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="avg" type="Real" array="False" size=""/>
+            <assign variable="avg" expression="(game1 + game2 + game3) / 3"/>
+        </body>
+    </function>
+    <function name="compavgHanCap" type="Real" variable="avgHanCap">
+        <parameters>
+            <parameter name="game1" type="Real" array="False"/>
+            <parameter name="game2" type="Real" array="False"/>
+            <parameter name="game3" type="Real" array="False"/>
+            <parameter name="hanCap" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="avgHanCap" type="Real" array="False" size=""/>
+            <assign variable="avgHanCap" expression="((game1 + hanCap) + (game2 + hanCap) + (game3 + hanCap)) / 3"/>
+        </body>
+    </function>
+</flowgorithm>
