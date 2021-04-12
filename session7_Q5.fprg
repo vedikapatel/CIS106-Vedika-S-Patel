@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-04-12 02:04:47 AM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLThMVk0wVjA7MjAyMS0wNC0xMTswMTozMDozNyBBTTszMzA2"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLThMVk0wVjA7MjAyMS0wNC0xMTswMzowNzowNCBBTTs2OzM0MTk="/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLTdSUTBUTzI7MjAyMS0wNC0xMjswMjowNDo0NyBBTTszOzM0MjI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="qty" type="Real" array="False" size=""/>
+            <declare name="unitPrice" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <declare name="tax" type="Real" array="False" size=""/>
+            <input variable="qty"/>
+            <input variable="unitPrice"/>
+            <call expression="comptotal(qty, unitPrice)"/>
+            <assign variable="total" expression="comptotal(qty,unitPrice)"/>
+            <call expression="comptax(qty,unitPrice)"/>
+            <assign variable="tax" expression="comptax(qty,unitPrice)"/>
+            <output expression="&quot;Total: $&quot; &amp; total" newline="True"/>
+            <output expression="&quot;Tax: $&quot; &amp; tax" newline="True"/>
+        </body>
+    </function>
+    <function name="comptotal" type="Real" variable="total">
+        <parameters>
+            <parameter name="qty" type="Real" array="False"/>
+            <parameter name="unitPrice" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="total" type="Real" array="False" size=""/>
+            <assign variable="total" expression="qty * unitPrice"/>
+        </body>
+    </function>
+    <function name="comptax" type="Real" variable="tax">
+        <parameters>
+            <parameter name="qty" type="Real" array="False"/>
+            <parameter name="unitPrice" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="tax" type="Real" array="False" size=""/>
+            <assign variable="tax" expression="(qty * unitPrice) * 0.07"/>
+        </body>
+    </function>
+</flowgorithm>
