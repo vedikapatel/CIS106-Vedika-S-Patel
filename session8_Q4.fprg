@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-04-18 11:26:40 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLUQyT1ZHREc7MjAyMS0wNC0xODswNzo1NDoxOCBQTTszMzU1"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLUQyT1ZHREc7MjAyMS0wNC0xODsxMToyNjo0MCBQTTs3OzM0NTg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Do you want to do this program? (Y or N) &quot;" newline="True"/>
+            <declare name="prog" type="String" array="False" size=""/>
+            <declare name="item" type="String" array="False" size=""/>
+            <declare name="price" type="Real" array="False" size=""/>
+            <declare name="qty" type="Integer" array="False" size=""/>
+            <declare name="extprice" type="Real" array="False" size=""/>
+            <declare name="tax" type="Integer" array="False" size=""/>
+            <declare name="disAmt" type="Integer" array="False" size=""/>
+            <declare name="disPrice" type="Integer" array="False" size=""/>
+            <input variable="prog"/>
+            <while expression="prog = &quot;Y&quot;">
+                <output expression="&quot;Enter the item: &quot;" newline="True"/>
+                <input variable="item"/>
+                <output expression="&quot;Enter the price: &quot;" newline="True"/>
+                <input variable="price"/>
+                <output expression="&quot;Enter quantity: &quot;" newline="True"/>
+                <input variable="qty"/>
+                <assign variable="extPrice" expression="qty * price"/>
+                <if expression="extPrice &gt; 10000">
+                    <then>
+                        <assign variable="disAmt" expression="extPrice * 0.10"/>
+                    </then>
+                    <else>
+                        <if expression="extPrice &gt; 5000">
+                            <then>
+                                <assign variable="disAmt" expression="extPrice * 0.05"/>
+                            </then>
+                            <else>
+                                <assign variable="disAmt" expression="extPrice * 0.02"/>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <assign variable="disPrice" expression="extPrice - disAmt"/>
+                <assign variable="tax" expression="disPrice * 0.07"/>
+                <output expression="&quot;Extended Price: $&quot; &amp; extPrice" newline="True"/>
+                <output expression="&quot;Discounted Amount: $&quot; &amp; disAmt" newline="True"/>
+                <output expression="&quot;Discounted Price: $&quot; &amp; disPrice" newline="True"/>
+                <output expression="&quot;Tax: $&quot; &amp; tax" newline="True"/>
+                <output expression="&quot;Do you want to do this program? (Y or N) &quot;" newline="True"/>
+                <input variable="prog"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
