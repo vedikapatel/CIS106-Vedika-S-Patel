@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-04-18 09:56:33 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLUQyT1ZHREc7MjAyMS0wNC0xODswNzo1NDoxOCBQTTszMzU1"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLUQyT1ZHREc7MjAyMS0wNC0xODswOTo1NjozMyBQTTs2OzM0Njk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Do you want to do this program? (Y or N) &quot;" newline="True"/>
+            <declare name="prog" type="String" array="False" size=""/>
+            <declare name="lastName" type="String" array="False" size=""/>
+            <declare name="exam1" type="Real" array="False" size=""/>
+            <declare name="exam2" type="Real" array="False" size=""/>
+            <declare name="avg" type="Real" array="False" size=""/>
+            <input variable="prog"/>
+            <while expression="prog = &quot;Y&quot;">
+                <output expression="&quot;Enter your last name: &quot;" newline="True"/>
+                <input variable="lastName"/>
+                <output expression="&quot;Enter exam 1 score: &quot;" newline="True"/>
+                <input variable="exam1"/>
+                <output expression="&quot;Enter exam 2 score: &quot;" newline="True"/>
+                <input variable="exam2"/>
+                <assign variable="avg" expression="(exam1 + exam2)/2"/>
+                <output expression="avg" newline="True"/>
+                <output expression="&quot;Do you want to do this program? (Y or N) &quot;" newline="True"/>
+                <input variable="prog"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
