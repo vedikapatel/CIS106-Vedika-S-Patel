@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-04-19 12:00:55 AM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLUQyT1ZHREc7MjAyMS0wNC0xODswNzo1NDoxOCBQTTszMzU1"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLUQyT1ZHREc7MjAyMS0wNC0xOTsxMjowMDo1NSBBTTs4OzM0NDQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Do you want to compute income tax? (Yes/No) &quot;" newline="True"/>
+            <declare name="prog" type="String" array="False" size=""/>
+            <declare name="grossInc" type="Real" array="False" size=""/>
+            <declare name="taxOwed" type="Real" array="False" size=""/>
+            <declare name="taxRate" type="Real" array="False" size=""/>
+            <input variable="prog"/>
+            <while expression="prog = &quot;Yes&quot;">
+                <output expression="&quot;Enter the Gross Income: &quot;" newline="True"/>
+                <input variable="grossInc"/>
+                <if expression="grossInc &gt; 500000">
+                    <then>
+                        <assign variable="taxRate" expression="30"/>
+                        <assign variable="taxOwed" expression="(grossInc * taxRate)/100"/>
+                    </then>
+                    <else>
+                        <if expression="grossInc &gt; 200000 And grossInc &lt;500000">
+                            <then>
+                                <assign variable="taxRate" expression="20"/>
+                                <assign variable="taxOwed" expression="(grossInc * taxRate)/100"/>
+                            </then>
+                            <else>
+                                <assign variable="taxRate" expression="15"/>
+                                <assign variable="taxOwed" expression="(grossInc * taxRate)/100"/>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <output expression="&quot;Gross Income: $&quot; &amp; grossInc" newline="True"/>
+                <output expression="&quot;Tax Rate: &quot; &amp; taxRate" newline="True"/>
+                <output expression="&quot;Tax owed: $&quot; &amp; taxOwed" newline="True"/>
+                <output expression="&quot;Do you want to do the computation again? (Yes or No) &quot;" newline="True"/>
+                <input variable="prog"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
