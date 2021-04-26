@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-04-26 04:23:33 AM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLTVTQzA1QTY7MjAyMS0wNC0yNjswMjo0Mjo0MSBBTTszMjU3"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLTVTQzA1QTY7MjAyMS0wNC0yNjswNDoyMzozMyBBTTsxOzMzNjc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="prinAmt, intRate, annInt, yr, accuInt, endBal, sumInt" type="Real" array="False" size=""/>
+            <output expression="&quot;Please enter the principle amount. &quot;" newline="True"/>
+            <input variable="prinAmt"/>
+            <output expression="&quot;Please enter the interest rate.&quot;" newline="True"/>
+            <input variable="intRate"/>
+            <assign variable="sumInt" expression="0"/>
+            <for variable="yr" start="1" end="5" direction="inc" step="1">
+                <assign variable="annInt" expression="comannInt(prinAmt,intRate)"/>
+                <assign variable="endBal" expression="prinAmt + annInt"/>
+                <assign variable="sumInt" expression="sumInt + annInt"/>
+                <output expression="&quot;Year: &quot; &amp; yr" newline="True"/>
+                <output expression="&quot;Beginning Balance: $&quot; &amp; prinAmt" newline="True"/>
+                <output expression="&quot;Ending Balance: $&quot; &amp; endBal" newline="True"/>
+                <assign variable="yr" expression="yr"/>
+                <assign variable="prinAmt" expression="endBal"/>
+                <assign variable="sumInt" expression="sumInt"/>
+            </for>
+            <output expression="&quot;Total interest rate: $&quot; &amp; sumInt" newline="True"/>
+        </body>
+    </function>
+    <function name="comannInt" type="Real" variable="annInt">
+        <parameters>
+            <parameter name="prinAmt" type="Real" array="False"/>
+            <parameter name="intRate" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="annInt" type="Real" array="False" size=""/>
+            <assign variable="annInt" expression="prinAmt * intRate"/>
+        </body>
+    </function>
+</flowgorithm>
