@@ -1,0 +1,10 @@
+Garcia
+55000.00
+Patel
+65000.00
+Carbajal
+40000.00
+Guzman
+50000.00
+Gorski
+35000.00

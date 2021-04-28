@@ -1,0 +1,15 @@
+Necklace
+3
+10
+Ring
+4
+20
+Paint
+2
+35
+Brush
+2
+15
+Ladder
+2
+40
